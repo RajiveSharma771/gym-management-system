@@ -14,7 +14,7 @@ steps:
       - 'push'
       - 'asia-south1-docker.pkg.dev/$PROJECT_ID/gym-management/backend:$SHORT_SHA'
 
-  # 3. Deploy image to Cloud Run
+  # 3. Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
@@ -30,3 +30,6 @@ steps:
 
 images:
   - 'asia-south1-docker.pkg.dev/$PROJECT_ID/gym-management/backend:$SHORT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
