@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gym Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Gym Management System</h1>
+
+        <!-- ========================= -->
+        <!-- ADD MEMBER -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <h2>Add New Member</h2>
+
+            <form id="memberForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        placeholder="Enter member name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        placeholder="Enter email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                        placeholder="Enter phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Add Member
+                </button>
+
+            </form>
+
+
+            <p id="formMessage"></p>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- EDIT MEMBER -->
+        <!-- ========================= -->
+
+        <section
+            class="card"
+            id="editSection"
+            style="display: none;"
+        >
+
+            <h2>Edit Member</h2>
+
+            <form id="editMemberForm">
+
+                <input
+                    type="hidden"
+                    id="editId"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="editName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        name="editName"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        name="editEmail"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editPhone">
+                        Phone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="editPhone"
+                        name="editPhone"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editStatus">
+                        Status
+                    </label>
+
+                    <select
+                        id="editStatus"
+                        name="editStatus"
+                    >
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit">
+                    Update Member
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="cancelEdit()"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+
+            <p id="editMessage"></p>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- MEMBERS LIST -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <h2>Members</h2>
+
+            <p id="message">
+                Loading members...
+            </p>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Phone</th>
+
+                            <th>Join Date</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="membersTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="app.js?v=4"></script>
+
+</body>
+
+</html>
